@@ -1,0 +1,52 @@
+<div class="row " style="padding-top: 80px ;">
+    <div class="col l6 ">
+        <img src={{photo}} width="100%" alt="val">
+    </div>
+
+    <div class="col l6 ">
+        <div class="center-align">
+            <h2>
+                <font face="CENTURY GOTHIC"> {{title}}</font>
+            </h2>
+            <h6>
+                <font face="CENTURY GOTHIC">{{description}} </font>
+            </h6>
+        </div>
+        <div style="padding-left: 180px; padding-top:10px">
+            <h6>
+                <font face="CENTURY GOTHIC"> Вы можете добавить</font>
+            </h6>
+            <form action="/order" method = "POST">
+            {{#each ingres}}
+
+            {{#if flag}}
+            
+            <p>
+                <label>
+                    <input type="hidden" >
+                    <input type="checkbox"  id = 'cb1' class="filled-in"  onchange = showOrHide("cb1")/>>
+                    <span>{{title}}</span>
+                </label>
+            </p>
+            {{/if}}
+
+            {{/each}}
+            </form>
+        </div>
+
+        <div class="center-align" style="padding-top: 5%;">
+            <h6>
+                <font face="CENTURY GOTHIC">{{base_cost}} &#8381; </font>
+            </h6>
+        </div>
+
+        <div class="center-align" style="padding-top: 5%;">
+            <a class="waves-effect waves-light grey btn" href="/bucket"> Заказать </a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+  function showOrHide(c1) {
+  console.log('dd')
+  }
+</script>
